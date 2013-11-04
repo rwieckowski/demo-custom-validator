@@ -2,7 +2,7 @@ package pl.rawie.demo.customValidator;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Satisfied(value=BeanRule.class, message="invalid.range", property="end")
+@Validation(value=BeanRule.class)
 public class Bean {
     @NotEmpty
     private String name;

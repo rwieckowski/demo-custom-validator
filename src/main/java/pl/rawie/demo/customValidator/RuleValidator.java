@@ -4,13 +4,13 @@ import javax.validation.ConstraintDefinitionException;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class RuleValidator implements ConstraintValidator<Satisfied, Object>
+public class RuleValidator implements ConstraintValidator<Validation, Object>
 {
     private String property;
     private Rule rule;
 
     @Override
-    public void initialize(Satisfied constraintAnnotation) {
+    public void initialize(Validation constraintAnnotation) {
         try {
             this.rule = constraintAnnotation.value().newInstance();
         } catch (InstantiationException e) {
